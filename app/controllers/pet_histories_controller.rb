@@ -1,5 +1,6 @@
 class PetHistoriesController < ApplicationController
   before_action :set_pet_history, only: [:show, :edit, :update, :destroy]
+  before_action :set_pet, only: [:edit, :new, :create, :index]
 
   # GET /pet_histories
   # GET /pet_histories.json
@@ -15,6 +16,7 @@ class PetHistoriesController < ApplicationController
   # GET /pet_histories/new
   def new
     @pet_history = PetHistory.new
+    
   end
 
   # GET /pet_histories/1/edit
@@ -67,8 +69,12 @@ class PetHistoriesController < ApplicationController
       @pet_history = PetHistory.find(params[:id])
     end
 
+    def set_pet
+      @pets = Pet.pluck :name, :id
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_history_params
-      params.require(:pet_history).permit(:weight, :heigth, :description)
+      params.require(:pet_history).permit(:weight, :heigth, :description, :pet_id)
     end
 end
