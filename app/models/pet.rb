@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
 
-  has_many :pet_histories
-  belongs_to :client
+  has_many :pet_histories, dependent: :destroy
+  belongs_to :client 
 
   validates_presence_of :name
 
@@ -25,8 +25,8 @@ class Pet < ApplicationRecord
     h = 0
     suma = 0
     pet_histories.each do |history|
-      h = history.heigth
-      suma = suma + h
+        h = history.heigth
+        suma = suma + h
     end
     prom = (suma/pet_histories.count).ceil(2)
   end
