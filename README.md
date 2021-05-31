@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Heroku: https://morning-headland-72859.herokuapp.com
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Tuve problemas para subir la migración del cambio de tipo de dato a Heroku, por lo que tuve que crear un nuevo proyecto y en vez de cambiar el tipo de dato, borre la columna y la volvi a crear.
+Los commits anteriores estan reflejados en https://github.com/danielidr/veterinario
